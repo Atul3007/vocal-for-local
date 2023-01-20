@@ -55,7 +55,7 @@
       </div>
 
       <div class="row">
-        <div class="col">
+        <div class="col-lg-8"style="max-width: 800px; margin-left: 3.5%;">
             <div class="card text-center">
                 <div class="card-header">
                   <ul class="nav nav-tabs card-header-tabs">
@@ -85,7 +85,9 @@
                             <p style="color: green; text-align: right;">50% off</p>
                           <h5 class="card-title" style="text-align: right;">2399/-</h5>
                           <p style="color: green;text-align: right;">Inc. of all taxes</p>
-                          <p style="text-align: right;"><a href="#" class="btn btn-danger">Add+</a></p>
+                          <p style="text-align: right;"><input type="number" id="inp"></p>
+                          
+                          <p style="text-align: right;"><a href="" id="add" class="btn btn-danger">Add+</a></p>
                         </div>
                         
                     </div>
@@ -166,13 +168,32 @@
                             <p style="color: green; text-align: right;">5% off</p>
                           <h5 class="card-title" style="text-align: right;">399/-</h5>
                           <p style="color: green;text-align: right;">Inc. of all taxes</p>
-                          <p style="text-align: right;"><a href="#" class="btn btn-danger">Add+</a></p>
+                          <p style="text-align: right;"><a href="#" class="btn btn-danger" id="add">Add+</a></p>
                         </div>
                     </div>
                 </div>
               </div>
         </div>
-        <div class="col"></div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              Your Order
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Total ammount</h5>
+              <p class="card-text" id="price"></p>
+              <p>You save</p>
+              <p style="color: green;"id="title"></p>
+              <a href="payment.html" class="btn btn-outline-danger">Place Order</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%; margin-top: 5%;">
+            <img src="images/5fbcace45cc6f2000bc7fade.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-text" style="text-align: center;">Continue Shopping for rewards.</h3>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="row justify-content-evenly bg-dark text-white mt-5 mb-3 pt-2 pb-2">
@@ -202,3 +223,12 @@
 
   </body>
 </html>
+
+<script>
+document.getElementById("add").addEventListener("click",(e)=>{
+  e.preventDefault();
+  let a=document.getElementById("inp").value;
+  document.getElementById("price").innerText=Math.floor(2399-2399*1/2)*(a)+"/-";
+  document.getElementById("title").innerText=Math.floor(2399*1/2)*(a)+"/-";
+})
+</script>

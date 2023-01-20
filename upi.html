@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone pe</title>
+    <meta charset="UTF-8" />
+     <style>
+        body {
+  font-family: sans-serif;
+}
+
+.container {
+  border: 1px dashed;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.phone-pe-logo {
+  width: 100%;
+}
+
+.main {
+  padding: 32px;
+}
+
+.feedback-wrapper {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  flex-direction: column;
+}
+
+.feedback-img {
+  width: 100%;
+}
+
+     </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="heading">
+          <img
+            src="images/phone-pe.png"
+            alt="phone-pe"
+            id="phone-pe-logo"
+            class="phone-pe-logo"
+          />
+        </div>
+        <div class="main">
+          <div>
+            Current Balance:
+            <strong id="balance-amt">0.00</strong>
+          </div>
+
+          <label>
+            Payment Amount:
+            <input type="number" name="pay-amt" id="pay-amt" />
+          </label>
+
+          <label>
+            <button class="pay-btn" id="pay-btn">Pay now!</button>
+          </label>
+
+          <div class="feedback-wrapper">
+            <strong id="feedback-text">Welcome...</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+let walletBalance = 5000;
+
+let payAmt = document.getElementById("pay-amt");
+let balanceAmt = document.getElementById("balance-amt");
+let payButton = document.getElementById("pay-btn");
+let feedbackText = document.getElementById("feedback-text");
+
+// set the text content of balanceAmt to be the wallet balance.
+ balanceAmt.innerText=walletBalance;
+ function makePayment(amt){
+   return new Promise((res,rej)=>{
+     setInterval(() => {
+       if(amt<=walletBalance){
+        res("Payment Successful");
+       }else{
+         rej("Insufficient balance");
+       }
+     }, 2000);
+   })
+ }
+ payButton.addEventListener("click",()=>{
+   let amt=payAmt.value;
+   feedbackText.innerText="Processing...";
+   makePayment(amt).then((res)=>{
+      walletBalance=walletBalance-amt;
+      balanceAmt.innerText=walletBalance;
+      feedbackText.innerText=res;
+   }).catch((rej)=>{
+    balanceAmt.innerText=walletBalance;
+    feedbackText.innerText=rej;
+   })
+ })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaceOrder</title>
+    <style>
+       *{
+        font-family: 'Poppins' , sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        transition: all .2s linear;
+       } 
+       .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5%;
+        min-height: 100vh;
+        background-color: palegreen;
+        padding-bottom: 70px;
+       }
+       .container form{
+        padding: 20px;
+        width: 700px;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+       }
+       .container form .row{
+           display: flex;
+           flex-wrap: wrap;
+           gap: 15px;
+       }
+       .container form .row .col{
+        flex: 1 1 250px;
+       }
+       .container form .row .col ,title{
+        font-size: 20px;
+        color: #333;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+       }
+       .container form .row .col .input_box{
+        margin: 15px 0;
+       }
+       .container form .row .col .input_box span{
+        margin-bottom: 5px;
+        display: block;
+       }
+       .container form .row .col .input_box input{
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 10px 15 px;
+        font-size: 15px;
+        text-transform: none;
+       }
+       .container form .row .col .input_box input:focus{
+        border: 1px solid #000;
+       }
+       .container form .row .col .flex{
+        display: flex;
+        gap: 15px;
+       }
+       .container form .row .col .flex .input_box{
+        margin-top: 5px;
+       }
+       .container form .row .col .input_box img{
+        height: 34px;
+        margin-top: 5px;
+        filter: drop-shadow(0 0 1px #000);
+       }
+       .container form .submit{
+        width: 100%;
+        padding: 12px;
+        font-size: 17px;
+        background-color: pink;
+        color: black;
+        margin-top: 5px;
+        cursor: pointer;
+       }
+       .container form .submit:hover{
+        background: #ccc;
+       }
+    </style>
+</head>
+<body>
+    <!-- <a href="upi.html"><h3>Pay v UPI </h3></a> -->
+    <div class="container">
+        <form action="">
+            <a href="upi.html"><h3 style="text-align: center;">Pay via UPI</h3></a>
+             <div class="row">
+                <div class="col">
+                    <h3 class="title">Billing Address</h3>
+                    <div class="input_box">
+                        <span>Full Name :</span>
+                        <input type="text" placeholder="Abc Xyz">
+                    </div>
+                    <div class="input_box">
+                        <span>mail :</span>
+                        <input type="email" placeholder="abc@mail.com">
+                    </div>
+                    <div class="input_box">
+                        <span>Address :</span>
+                        <input type="text" placeholder="Enter your full address">
+                    </div>
+                    <div class="input_box">
+                        <span>City :</span>
+                        <input type="text" placeholder="Your City">
+                    </div>
+                    <div class="input_box">
+                        <span>State :</span>
+                        <input type="text" placeholder="Your State">
+                    </div>
+                    <div class="input_box">
+                        <span>Pin Code :</span>
+                        <input type="number" placeholder="123 456">
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="title">Payment Details</h3>
+                    <div class="input_box">
+                        <span>Cards accepted :</span>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd3yPrHvuRoKVMFsKdXH1bRra_M8v8LG-XwT_41xcWnLPClAh2f3GwEKAwr-6I6WeI1SI&usqp=CAU" alt="">
+                    </div>
+                    <div class="input_box">
+                        <span>Name on card :</span>
+                        <input type="text" placeholder="Abc Xyz">
+                    </div>
+                    <div class="input_box">
+                        <span>Credit card number :</span>
+                        <input type="text" placeholder="1111 2222 3333 4444">
+                    </div>
+                    <div class="input_box">
+                        <span>Exp month :</span>
+                        <input type="text" placeholder="January">
+                    </div>
+                    <div class="input_box">
+                        <span>Exp year :</span>
+                        <input type="number" placeholder="2050">
+                    </div>
+                    <div class="input_box">
+                        <span>CVV :</span>
+                        <input type="number" placeholder="321">
+                    </div>
+                </div>
+             </div>
+             <input type="submit" value="Proceed to checkout" class="submit">
+        </form>
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit",()=>{
+              alert("Order Placed... thankyou for shopping");
+              window.location.href="index.html";
+        });
+      </script>
+</body>
+</html>
