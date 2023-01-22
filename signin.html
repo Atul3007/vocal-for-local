@@ -44,3 +44,29 @@
    
   </body>
 </html>
+<script>
+   let form =document.querySelector("form");
+    form.addEventListener("submit",async (e)=>{
+        e.preventDefault();
+        let obj={
+            name:form.exampleInputName.value,
+            gender:form.exampleInputGender.value,
+            pass:form.exampleInputEmail1.value,
+            email:form.exampleInputPassword1.value
+        }
+      try {
+        let res=await fetch("https://sapphire-elephant-kilt.cyclic.app/user/register",{
+            method:"POST",
+            headers:{
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify(obj)
+        })
+        let data=await res.json();
+        console.log(data);
+        alert("Successfully registered");
+      } catch (error) {
+        console.log(error);
+      }
+    })
+</script>
